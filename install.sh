@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+DOTDIR="$HOME/.dotfiles"
+
 zshrc() {
     echo "==========================================================="
     echo "             cloning zsh-autosuggestions                   "
@@ -12,7 +14,7 @@ zshrc() {
     echo "==========================================================="
     echo "             cloning zsh-completions                       "
     echo "-----------------------------------------------------------"
-    git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
     echo "==========================================================="
     echo "             cloning powerlevel10k                         "
     echo "-----------------------------------------------------------"
@@ -20,11 +22,11 @@ zshrc() {
     echo "==========================================================="
     echo "             import zshrc                                  "
     echo "-----------------------------------------------------------"
-    cat .zshrc > $HOME/.zshrc
+    cp $DOTDIR/zsh/.zshrc $HOME
     echo "==========================================================="
     echo "             import powerlevel10k                          "
     echo "-----------------------------------------------------------"
-    cat .p10k.zsh > $HOME/.p10k.zsh
+    cp zsh/.p10k.zsh $HOME
 }
 
 # change time zone
@@ -34,9 +36,12 @@ sudo dpkg-reconfigure --frontend noninteractive tzdata
 
 zshrc
 
+# install homebreww
+
+
 # make directly highlighting readable - needs to be after zshrc line
-echo "" >> ~/.zshrc
-echo "# remove ls and directory completion highlight color" >> ~/.zshrc
-echo "_ls_colors=':ow=01;33'" >> ~/.zshrc
-echo 'zstyle ":completion:*:default" list-colors "${(s.:.)_ls_colors}"' >> ~/.zshrc
-echo 'LS_COLORS+=$_ls_colors' >> ~/.zshrc
+# echo "" >> ~/.zshrc
+# echo "# remove ls and directory completion highlight color" >> ~/.zshrc
+# echo "_ls_colors=':ow=01;33'" >> ~/.zshrc
+# echo 'zstyle ":completion:*:default" list-colors "${(s.:.)_ls_colors}"' >> ~/.zshrc
+# echo 'LS_COLORS+=$_ls_colors' >> ~/.zshrc
