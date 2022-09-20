@@ -47,10 +47,8 @@ zshrc
 # echo 'LS_COLORS+=$_ls_colors' >> ~/.zshrc
 
 # SSH
-
 # enable ssh service
 # eval "$(ssh-agent -s)"
-
 # add private key
 # ssh-add ~/.ssh/id_rsa
 

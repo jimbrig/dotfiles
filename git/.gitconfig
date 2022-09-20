@@ -15,10 +15,8 @@
     defaultBranch = main
 
 [credential]
-    #helper = 
-    #helper = /usr/local/share/gcm-core/git-credential-manager-core
-
-[alias]
+    helper = 
+    helper = /usr/local/share/gcm-core/git-credential-manager-core
 
 [ui]
     color = auto
@@ -36,10 +34,10 @@
     # protocol = ssh
 
 [commit]
-    #gpgsign = true
+    gpgsign = true
 
 [tag]
-    #forceSignAnnotated = true
+    forceSignAnnotated = true
 
 [color "branch"]
     current = yellow reverse
