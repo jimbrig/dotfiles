@@ -1,0 +1,94 @@
+[user]
+    name = Jimmy Briggs
+    email = jimmy.briggs@jimbrig.com
+
+[github]
+    user = jimbrig
+
+[pager]
+    branch = false
+
+[pull]
+    ff = true
+
+[init]
+    defaultBranch = main
+
+[credential]
+    #helper = 
+    #helper = /usr/local/share/gcm-core/git-credential-manager-core
+
+[alias]
+
+[ui]
+    color = auto
+
+[core]
+    longpaths = true
+    excludesfile = ~/.config/git/gitignore_global
+    attributesfile = ~/.config/git/gitattributes_global
+    editor = code-insiders --wait
+    autocrlf = false
+    eol = lf
+
+[default]
+    branch = main
+    # protocol = ssh
+
+[commit]
+    #gpgsign = true
+
+[tag]
+    #forceSignAnnotated = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[color "interactive"]
+    diffFilter = yellow bold
+    prompt = yellow bold
+    header = yellow bold
+    help = green bold
+    error = red bold
+
+[color "ui"]
+    auto = true
+
+[color "pager"]
+    diff = true
+    log = true
+    reflog = true
+    showBranch = true
+
+[alias]
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    sync = merge --ff-only @{u}
+    undo = reset --soft HEAD^
+    amend = commit --amend --no-edit
+    clearcache = "!git rm -r --cached . && git add . && git commit -m 'clear cache'"
+    uncommit = reset --soft HEAD~1
+    unpushed = log @{u}..
+    unmerged = log --no-merges --left-right --cherry-pick --oneline @{u}...
+    untracked = ls-files --others --exclude-standard
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
