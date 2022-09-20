@@ -45,3 +45,23 @@ zshrc
 # echo "_ls_colors=':ow=01;33'" >> ~/.zshrc
 # echo 'zstyle ":completion:*:default" list-colors "${(s.:.)_ls_colors}"' >> ~/.zshrc
 # echo 'LS_COLORS+=$_ls_colors' >> ~/.zshrc
+
+# SSH
+# enable ssh service
+# eval "$(ssh-agent -s)"
+# add private key
+# ssh-add ~/.ssh/id_rsa
+
+# add public key to GitHub
+# gh ssh-key add ~/.ssh/id_rsa.pub
+
+# GPG
+# gpg --full-generate-key
+# gpg --list-secret-keys --keyid-format LONG
+
+# copy public key to clipboard
+# gpg --armor --export jimmy.briggs@jimbrig.com > .gnupg/public.gpg
+
+# add public key to GitHub
+# gh auth refresh -s write:gpg_key
+# gh gpg-key add ~/.gnupg/public.gpg
